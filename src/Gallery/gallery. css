@@ -1,0 +1,55 @@
+/* PhotoGallery.css */
+.photo-gallery {
+  padding: 1rem;
+}
+
+.categories {
+  display: flex;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.category-button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.category-button.active {
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .categories {
+    flex-direction: column;
+  }
+}
